@@ -1,8 +1,6 @@
-# Render Deployment Pack
+# JSONHero Render Deployment Pack (Fixed)
 
-This zip contains:
-- Dockerfile
+Includes:
+- Dockerfile (handles .env)
 - render.yaml
 - README
-
-Use these files to deploy to Render.com.

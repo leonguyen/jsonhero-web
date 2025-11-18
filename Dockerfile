@@ -3,13 +3,13 @@ FROM node:18
 WORKDIR /app
 COPY . .
 
-# Nhận variables từ Render (SESSION_SECRET)
 ARG SESSION_SECRET
 ENV SESSION_SECRET=${SESSION_SECRET}
 
-# Tạo file .env nếu thiếu
 RUN echo "SESSION_SECRET=${SESSION_SECRET}" > .env
 
-RUN npm install && npm run build
+RUN npm install
+RUN npm run build
 
+EXPOSE 3000
 CMD ["npm", "start"]
