@@ -17,7 +17,7 @@
     "dev": "concurrently \"npm run dev:css\" \"npm run dev:search\" \"remix watch\"",
     "dev:css": "tailwindcss -i ./styles/tailwind.css -o ./app/tailwind.css --watch",
     "postinstall": "remix setup cloudflare-workers",
-    "start": "concurrently \"npm run dev\" \"npm run start:worker\"",
+    "start": "node server.js",
     "deploy": "npm run build && wrangler publish",
     "deploy:production": "npm run build && wrangler publish --env production",
     "test": "jest",

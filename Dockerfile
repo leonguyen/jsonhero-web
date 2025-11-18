@@ -1,15 +1,16 @@
-FROM node:18
+FROM node:18-alpine
 
 WORKDIR /app
+
+# copy package files first to leverage cache
+COPY package*.json ./
+RUN npm ci --production
+
+# copy rest
 COPY . .
 
-ARG SESSION_SECRET
-ENV SESSION_SECRET=${SESSION_SECRET}
-
-RUN echo "SESSION_SECRET=${SESSION_SECRET}" > .env
-
-RUN npm install
+# build the remix app
 RUN npm run build
 
 EXPOSE 3000
-CMD ["npm", "start"]
+CMD ["node", "server.js"]

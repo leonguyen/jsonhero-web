@@ -1,11 +1,11 @@
 services:
   - type: web
-    name: jsonhero-web
+    name: jsonhero-web-node
     env: docker
     dockerfilePath: ./Dockerfile
     autoDeploy: true
     envVars:
+      - key: NODE_ENV
+        value: production
       - key: SESSION_SECRET
         value: "replace_me_secure"
-      - key: NODE_ENV
-        value: "production"
