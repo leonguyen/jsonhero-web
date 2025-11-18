@@ -1,4 +1,4 @@
-// Minimal Node server for Remix build
+// Minimal Node server for Remix build using @remix-run/serve
 const http = require("http");
 const { createRequestHandler } = require("@remix-run/serve");
 const build = require("./build");

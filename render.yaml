@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: jsonhero-web-node
+    name: jsonhero-web-node-full
     env: docker
     dockerfilePath: ./Dockerfile
     autoDeploy: true

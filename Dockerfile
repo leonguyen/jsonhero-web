@@ -1,15 +1,12 @@
-FROM node:18-alpine
+FROM node:18
 
 WORKDIR /app
 
-# copy package files first to leverage cache
 COPY package*.json ./
-RUN npm ci --production
+RUN npm ci
 
-# copy rest
 COPY . .
 
-# build the remix app
 RUN npm run build
 
 EXPOSE 3000
